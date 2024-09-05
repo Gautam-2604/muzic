@@ -71,11 +71,8 @@ export default function StreamView({
         return;
     }
     let player = YouTubePlayer(videoPlayerRef.current);
-    
-    // 'loadVideoById' is queued until the player is ready to receive API calls.
     player.loadVideoById(currentVideo?.extractedId);
-    
-    // 'playVideo' is queue until the player is ready to received API calls and after 'loadVideoById' has been called.
+   
     player.playVideo();
     function eventHandler(event: any) {
         console.log(event);
